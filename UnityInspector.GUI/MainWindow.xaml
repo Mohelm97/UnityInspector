@@ -154,6 +154,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
+
             <TreeView Margin="0,0,3,0" x:Name="GameObjectsTree" Grid.Column="0"
                       ItemsSource="{Binding MainSceneGameObject.Children}">
                 <TreeView.Resources>
@@ -172,13 +173,16 @@
                     </Style>
                 </TreeView.ItemContainerStyle>
             </TreeView>
+
             <GridSplitter Grid.Column ="0" Width="3"
                 HorizontalAlignment="Right" VerticalAlignment="Stretch" />
+
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
+
                 <ListBox Margin="0,0,0,3" x:Name="ComponantsList" Grid.Row="0"
                          ItemsSource="{Binding SelectedItem.Components, ElementName=GameObjectsTree}" >
                     <ListBox.ItemTemplate>
@@ -190,8 +194,9 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
+
                 <GridSplitter Grid.Row ="0" Height="3" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
-                <ListBox  Grid.Row="1" Grid.IsSharedSizeScope="True" HorizontalAlignment="Stretch" ItemsSource="{Binding SelectedItem.Members, ElementName=ComponantsList}">
+                <ListBox Grid.Row="1" Grid.IsSharedSizeScope="True" HorizontalAlignment="Stretch" ItemsSource="{Binding SelectedItem.Members, ElementName=ComponantsList}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid>
@@ -205,6 +210,7 @@
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
+
                     <ListBox.ItemContainerStyle>
                         <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
                             <Setter Property="Focusable" Value="False"/>
@@ -212,39 +218,7 @@
                     </ListBox.ItemContainerStyle>
                 </ListBox>
             </Grid>
-            
         </Grid>
-
-        <!--Grid Grid.Column="0" Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200" />
-                <ColumnDefinition Width="5" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="5" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="5" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="5" />
-                <ColumnDefinition Width="200" />
-            </Grid.ColumnDefinitions>
-            <ComboBox Grid.Column="0" ItemsSource="{Binding Processes}" 
-                      SelectedItem="{Binding Path=SelectedProcess, UpdateSourceTrigger=PropertyChanged}" 
-                      IsSynchronizedWithCurrentItem="True" 
-                      IsEnabled="{Binding Processes, Converter={StaticResource ICollectionToBooleanConverter}, Mode=OneWay}">
-                <ComboBox.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding Name}"/>
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-            </ComboBox>
-            <Button Grid.Column="2"  Content="Refresh" HorizontalAlignment="Left" Command="{Binding RefreshCommand}"/>
-            <Button Grid.Column="4"  Content="Inject" HorizontalAlignment="Left" 
-                    Command="{Binding InjectCommand}"
-                    IsEnabled="{Binding Processes, Converter={StaticResource ICollectionToBooleanConverter}, Mode=OneWay}"/>
-            <Button Grid.Column="6"  Content="Refresh Tree" HorizontalAlignment="Left" Command="{Binding RefreshTreeCommand}"/>
-            <Slider Grid.Column="8" Maximum="10" SmallChange="1" LargeChange="1" Value="{Binding RefreshRate, Mode=OneWayToSource}" TickPlacement="BottomRight" />
-        </Grid-->
-        
     </DockPanel>
 
 </Window>
