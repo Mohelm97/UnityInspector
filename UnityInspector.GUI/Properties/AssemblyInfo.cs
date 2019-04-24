@@ -8,11 +8,11 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle ("UnityInspector.GUI")]
-[assembly: AssemblyDescription ("")]
+[assembly: AssemblyDescription ("A tool for inspecting and editing managed Unity3d game in real-time")]
 [assembly: AssemblyConfiguration ("")]
-[assembly: AssemblyCompany ("")]
-[assembly: AssemblyProduct ("UnityInspector.GUI")]
-[assembly: AssemblyCopyright ("Copyright ©  2019")]
+[assembly: AssemblyCompany ("Mohelm97")]
+[assembly: AssemblyProduct ("UnityInspector")]
+[assembly: AssemblyCopyright ("Copyright (c) 2019 Mohammed ALMadhoun")]
 [assembly: AssemblyTrademark ("")]
 [assembly: AssemblyCulture ("")]
 
